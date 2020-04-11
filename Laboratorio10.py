@@ -12,12 +12,21 @@ def a_power_b (a,b): #creo una funcion para desarrolar el ejericio
     while d <= b: #condicional para que el algoritmo sepa donde detenerse
         e = e * a #aqui le voy agregando los resultados de las multiplicaciones
         d = d + 1 #le sumo a d 1 para aumentar su valor y que este llegue a ser menor o igual a b      
-    print("el resultado de numero a elevado al numero b es: "+str(e))#hago la impresion
+    return e
 a=1
-while a<0 or a>0:
-    a=int(input("ingrese el valor de a: ")) #aqui pregunto por a
-    b=int(input("ingrese el valor de b: ")) #aqui pregunto por b
-    a_power_b(a,b)
-
-      
-
+cont=0
+cont2=0
+conttotal=0
+while a<0 or a>0: #este ciclo pide numeros de entrada hasta que ingrese 0, en ese momento se detiene el algoritmo
+    a=int(input("ingrese el valor de a: ")) #aqui pregunto por a que es el numerador
+    b=int(input("ingrese el valor de b: ")) #aqui pregunto por b que es el exponente 
+    conttotal=conttotal+1
+    if a_power_b(a,b)%2==0:
+        cont=cont+1       
+    elif a_power_b(a,b)%2!=0:
+        cont2=cont2+1 
+    print("el resultado de numero a elevado al numero b es: "+str(a_power_b(a,b)))
+print("el numero de veces en el que la potencia fue par es: "+str(cont-1))
+print("el numero de veces en el que la potencia fue impar es: "+str(cont2))
+print("el numero de veces en que se calcularon potencias fue: "+str(conttotal-1))           
+    
